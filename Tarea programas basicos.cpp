@@ -4,7 +4,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <iomanip>
-
+#include<conio.h>
+#include<windows.h>
 
 
 using namespace std;
@@ -599,9 +600,46 @@ else
 	{
 		cout<<endl;
 		
-		cout<<" No logre realizar este programa ya que necesitaba programas externos como gotoxy para mostrarlo \n en pantalla, por lo que preferi no realizarlo a pedirle que instale otros programas o librerias extra \n (ademas de que ciertas librerias para hacerlo no me funcionaban aqui, espero comprenda"<<endl;
+		cout<<"ingeniero Disculpe no logre hacer que me funcionara ya en conjunto pero el codigo quedara impreso en pantalla "<<endl;
+		cout<<"              "<<endl;
+		cout<<"void gotoxy(int x1, int y1){"<<endl; 
+		cout<<"   HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);"<<endl;
+		cout<<"   COORD dwPos;"<<endl;
+		cout<<"   dwPos.X = x1;"<<endl;
+		cout<<"   dwPos.Y = y1;"<<endl;
+		cout<<"   SetConsoleCursorPosition(hcon, dwPos);"<<endl;
+		cout<<"              "<<endl;
+	// OCULTAR CURSOR
+		cout<<"   CONSOLE_CURSOR_INFO cci;"<<endl;
+		cout<<"   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);"<<endl;
+		cout<<"   cci.bVisible = 0;"<<endl;
+		cout<<"   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);"<<endl;
+		cout<<"   }"<<endl;
+		cout<<"              "<<endl;
+		cout<<"char opcion;"<<endl;
+		cout<<"int x=10, y=10;"<<endl;
+		cout<<"int main(){"<<endl;
+		cout<<"   while(opcion!='z')"<<endl;
+		cout<<"   {"<<endl;
+		cout<<"              "<<endl;
+		cout<<"        system(cls);"<<endl;
+		cout<<"        gotoxy(x,y); printf( '.' );"<<endl;
+		cout<<"        opcion=getch();"<<endl;
+		cout<<"        switch(opcion)"<<endl;
+		cout<<"	{"<<endl;
+		cout<<"              "<<endl;
+			// MOVER EL PUNTO
+		cout<<"         	case 'w': y--; break;"<<endl;
+		cout<<"         	case 's': y++; break;"<<endl;
+		cout<<"         	case 'a': x--; break;"<<endl;
+		cout<<"         	case 'd': x++; break;"<<endl;
+		cout<<"      }"<<endl;
+		cout<<"}"<<endl;		
+	
 	system("pause");
 	break;
+	
+	
 	}
 
 	case 15: system("cls");cout<<"Cajero Automático: "<<endl;
